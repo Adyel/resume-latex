@@ -1,0 +1,451 @@
+%------------------------------------------------------------------------------
+% CV in Latex
+% Author : Charles Rambo
+% Based off of: https://github.com/sb2nov/resume and Jake's Resume on Overleaf
+% Most recently updated version may be found at https://github.com/fizixmastr 
+% License : MIT
+%------------------------------------------------------------------------------
+
+\documentclass[A4,11pt]{article}
+%\documentclass[letterpaper,11pt]{article} %For use in US
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\input{glyphtounicode}
+
+\begin{comment}
+I am by no means a professional when it comes to the CV's/resumes, I have
+received various trainings on how to write a CV and resume from my high 
+school, as well as the Austin College and University of Eastern Finland's
+career counseling departments. As I intend to share my CV as a template, I 
+feel that it is my responsibility to provide explanations of my work.
+\end{comment}
+
+
+%-----FONT OPTIONS-------------------------------------------------------------
+\begin{comment}
+The font of the document will impact not just how readable it is, but how it is
+perceived. In the "The Craft of Scientific Writing" by Michael Alley, shares a
+common fonts for publication as well as their use. I have chosen to use
+Palatino for its legibility, some others are given below. There is far too much
+about typography to discus here. Note: serif fonts have short projecting
+strokes, sans-serif fonts are sans (without) these strokes.
+\end{comment}
+
+
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+%-----PAGE SETUP---------------------------------------------------------------
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+\addtolength{\topmargin}{-1cm}
+\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+%\addtolength{\oddsidemargin}{-0.5in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1in}
+%\addtolength{\topmargin}{-.5in}
+%\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small#3 & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%------------------------------------------------------------------------------
+% CV STARTS HERE  %
+%------------------------------------------------------------------------------
+\begin{document}
+
+%-----HEADING------------------------------------------------------------------
+% \begin{comment}
+% In Europe it is common to include a picture of ones self in the CV. Select
+% which heading appropriate for the document you are creating.
+% \end{comment}
+
+% \begin{minipage}[c]{0.05\textwidth}
+% \-\
+% \end{minipage}
+% \begin{minipage}[c]{0.2\textwidth}
+% % \begin{tikzpicture}
+% %     \clip (0,0) circle (1.75cm);
+% %     \node at (0,-.7) {\includegraphics[width = 9cm]{portrait}}; 
+% %     % if necessary the picture may be moved by changing the at (coordinates)
+% %     % width defines the 'zoom' of the picture
+% % \end{tikzpicture}
+% \hfill\vline\hfill
+% \end{minipage}
+% \begin{minipage}[c]{0.4\textwidth}
+%     \textbf{\Huge \scshape{Charles Rambo}} \\ \vspace{1pt} 
+%     % \scshape sets small capital letters, remove if desired
+%     \small{+1 123-456-7890} \\
+%     \href{mailto:you@provider.com}{\underline{you@provider.com}}\\
+%     % Be sure to use a professional *personal* email address
+%     \href{https://www.linkedin.com/in/charles-rambo/}{\underline{linkedin.com/in/charles-rambo}} \\
+%     % you should adjust you linked in profile name to be professional and recognizable
+%     \href{https://github.com/fizixmastr}{\underline{github.com/fizixmastr}}
+% \end{minipage}
+
+% Without picture
+\begin{center}
+   \textbf{\Huge \scshape MD ADYELULLAHIL MAMUN} \\ \vspace{1pt} %\scshape sets small capital letters, remove if desired
+
+    % \textbf{Location: }\small  Dhaka, Bangladesh \\
+    \textbf{Phone: }\small +(880)1534953967  \\
+    
+    \textbf{Email: }
+    \href{mailto:adyel@live.com}{adyel@live.com}, 
+    \href{mailto:md.adyelullahil.mamun@g.bracu.ac.bd}{md.adyelullahil.mamun@g.bracu.ac.bd}    \\
+    
+   \href{https://www.linkedin.com/in/ady3l/}{\underline{Linkedin/ady3l}} $|$
+   \href{https://github.com/adyel}{\underline{GitHub/adyel}}
+\end{center}
+
+
+%-----EDUCATION----------------------------------------------------------------
+\section{Education}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Degree Achieved}{Years of Study}
+%      {Institution of Study}{Where it is located}
+
+    \CVSubheading
+      {{Bachelor of Science $|$ \emph{\small{Computer Science}}}}{January 2017 -- January 2021}
+      {BRAC University}{Dhaka, Bangladesh}
+
+        \CVItemListStart
+        \CVItem{CGPA: 3.80 out of 4.0}
+        \CVItem{Awarded Highest Distinction}
+        \CVItem{Key Course-works: Object Oriented Programming, Software Engineering, System analysis and design, Neural Networks, Artificial Intelligence, Numerical Methods, Modern Probability Theory \& Stochastic Processes.}
+      \CVItemListEnd
+      
+  \CVSubHeadingListEnd
+
+%-----WORK EXPERIENCE----------------------------------------------------------
+
+\section{Work Experience}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+%      \CVItemListStart
+%        \CVItem{Why it is important to this employer}
+%      \CVItemListEnd
+    \CVSubheading
+      {Software Engineer}{April 2022 -- Present}
+      {\href{https://therapbd.com/}{Therap (BD), LTD}}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Tech Stack: Java, JS, JEE, Spring, Hibernate, MyBatis, Oracle DB}
+        \CVItem{Migrated and Refactored legacy modules to a modern stack}
+        \CVItem{Optimized mission-critical components in the back end}
+        \CVItem{Worked on complex report generation framework}
+        \CVItem{Training junior developers}
+        
+      \CVItemListEnd
+
+      \CVSubheading
+      {Associate Software Engineer}{February 2021 -- May 2022}
+      {\href{https://therapbd.com/}{Therap (BD), LTD}}{Dhaka, Bangladesh}
+
+      \CVItemListStart
+        \CVItem{Tech Stack: Java, JS, Hibernate, Spring, Oracle DB, MyBatis}
+        \CVItem{Training about PHI and HIPAA compliance}
+        \CVItem{Learned about company-specific technologies}
+        \CVItem{Bug fixes on the front end}
+        
+      \CVItemListEnd
+
+    \CVSubheading
+      {Software Engineer Intern}{January 2021 -- February 2021}
+      {\href{https://www.metafour.com/}{metafour}}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Tech Stack: Java, Spring-boot, React}
+        \CVItem{Learned about react and its eco-system}
+        \CVItem{Created react components for the front-end}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+
+%-----Teaching Experience----------------------------------------------------
+
+  \section{Teaching Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Student Tutor}{February 2020 -- December 2020}
+      {\href{https://www.bracu.ac.bd/}{BRAC University}}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{Courses: Data Structure, Algorithm}
+        \CVItem{Helped 150+ students in the span of 1 year with their studies}
+        \CVItem{Taught face-to-face and virtually}
+        \CVItem{Graded Lab Assignments and Home Assignments}
+        \CVItem{Helped Conduct Lab class}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+  %-----Research Experience----------------------------------------------------
+
+  \section{Research Experience}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {Bachelor of Science Degree Requirement Research}{February 2020 -- December 2020}
+      {\href{https://www.bracu.ac.bd/}{BRAC University}}{Dhaka, Bangladesh}
+      \CVItemListStart
+        \CVItem{\textbf{Supervisor}: \href{https://scholar.google.com/citations?user=t4GrJR4AAAAJ&hl=en}{\underline{Dr. Md. Golam Rabiul Alam}}}
+        
+        \CVItem{\textbf{Research-field}: Artificial General Intelligence, IVA (Intelligent Virtual Assistant), Natural Language Processing, SER (Speech Emotion Recognition), Personal Assistant.}
+      
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+
+    %-----Papers ----------------------------------------------------
+
+  \section{Papers}
+  \CVSubHeadingListStart
+    \CVSubheading
+      {\href{https://doi.org/10.1007/s11042-023-14597-6}{Affective Social Anthropomorphic Intelligent System}}{}
+      {\href{https://www.bracu.ac.bd/}{BRAC University}}{}
+      \CVItemListStart
+        \CVItem{\textbf{Supervisor}: \href{https://scholar.google.com/citations?user=t4GrJR4AAAAJ&hl=en}{\underline{Dr. Md. Golam Rabiul Alam}}}
+        \CVItem{\underline{Published} in {\href{https://www.springer.com/journal/11042}{Springer: Multimedia Tools and Applications Journal}}} -- IF: 3.6
+        \CVItem{DOI: {\href{https://doi.org/10.1007/s11042-023-14597-6}{10.1007/s11042-023-14597-6}}}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+
+\CVSubHeadingListStart
+    \vspace{2pt}\item
+    \begin{tabular*}{0.9\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\href{https://doi.org/10.1109/ICCIT60459.2023.10441433}{SynthEnsemble: A Fusion of CNN, Vision Transformer, and Hybrid Models for Multi-Label Chest}}\\ \textbf{ X-Ray Classification}
+    \end{tabular*}\vspace{2pt}
+    
+      {\href{https://www.bracu.ac.bd/}{BRAC University}}{}
+      \CVItemListStart
+        \CVItem{\textbf{Supervisor}: \href{https://scholar.google.com/citations?user=t4GrJR4AAAAJ&hl=en}{\underline{Dr. Md. Golam Rabiul Alam}}}
+        \CVItem{\underline{Published} in {\href{https://iccit.org.bd/2023/}{IEEE: International Conference on Computer and Information Technology}}}
+        \CVItem{DOI: {\href{https://doi.org/10.1109/ICCIT60459.2023.10441433}{10.1109/ICCIT60459.2023.10441433}}}
+      \CVItemListEnd
+  \CVSubHeadingListEnd
+  
+%-----PERSONAL PROJECTS----------------------------------------------------
+
+\section{Projects}
+  \CVSubHeadingListStart
+%    \CVSubheading
+%      {Title of Work}{When it was done}
+%      {Institution you worked with}{unused}
+    \CVSubheading
+      {\href{https://github.com/OpenBangla/OpenBangla-Keyboard}{OpenBangla Keyboard}}{2018 – Present}
+      {\href{https://github.com/OpenBangla/}{OpenBangla}}{}
+      \CVItemListStart
+        \CVItem{Most popular software for writing Bengali in Linux-based systems}
+        \CVItem{Fully Open-source}
+        \CVItem{350+ GitHub Star}
+        \CVItem{Tech Stack: C++, QT, Rust, Bash}
+      \CVItemListEnd
+
+
+    \CVSubheading
+      {\href{https://github.com/Adyel/ServerSam}{Personal Movie Manager}}{2018 – 2019}
+      {Personal}{}
+      \CVItemListStart
+        \CVItem{Build upon Java, JavaFX, and Hibernate framework}
+        \CVItem{Uses Jsoup to scrape data from the movie hosting server}
+        \CVItem{Uses REST API to communicate with metadata providers}
+        \CVItem{Multi-threaded and Cross-platform }
+      \CVItemListEnd
+
+    \CVSubheading
+      {\href{https://bitbucket.org/Ady3l/j-commerce/src/develop/}{J-Commerce}}{2021}
+      {Personal}{}
+      \CVItemListStart
+        \CVItem{A proof-of-concept e-commerce site}
+        \CVItem{Uses Java, Javascript, Theymeleaf, Postgresql, and Spring Technologies}
+        \CVItem{Based on the MVC pattern}
+      \CVItemListEnd
+   
+  \CVSubHeadingListEnd
+
+%-----Certifications--------------------------------------------
+
+\section{Certification}
+  \CVSubHeadingListStart
+%    \CVSubheading % Example
+%      {Work Presented}{When}
+%      {Occasion}{}
+    \CVSubheading
+      {\href{https://courses.edx.org/certificates/460799d7378b48c7b0562a799d16b16b}{DL0101EN: Deep Learning Fundamentals with Keras}}{June 2020}
+      {IBM online learning initiative, via EdX}{}
+    
+    \CVSubheading
+      {\href{https://www.coursera.org/account/accomplishments/certificate/FFAXKRURWRDR}{Building Scalable Java Microservices with Spring Boot and Spring Cloud}}{May 2020}
+      {Online course by Google Cloud, via Coursera}{}
+    
+  \CVSubHeadingListEnd
+
+%-----HONORS AND AWARDS--------------------------------------------------------
+\section{Honors and Awards}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What}{When}
+%      {Short Description}{}
+    \CVSubheading
+      {Dean's List}{Fall 2017, Summer 2018, Summer 2019}
+      {Recognition for scoring 3.70 - 3.89 is a particular semester}{}
+    \CVSubheading
+      {VC's List}{Fall 2019, Spring 2020}
+      {Awarded for scoring 3.90 - 4.00 in a particular semester}{}
+    \CVSubheading
+      {BRAC University Performance Based Scholarship}{Summer 2020}
+      {Merit-based scholarship for Academic Performance}{}
+  \CVSubHeadingListEnd
+
+% %-----TEACHING EXPERIENCE------------------------------------------------------
+% \begin{comment}
+% Section is here as it applied to my application for positions in academia. 
+% Remember to tailor the resume for to the position.
+% \end{comment}
+
+% \section{Teaching Experience}
+%   \CVSubHeadingListStart
+% %    \CVSubheading
+% %      {What}{When}
+% %      {School}{Where}
+%     \CVSubheading
+%       {High School Physics (11 Weeks Teaching/Observing)}{Fall 2017}
+%       {Denison High School}{Denison, TX}
+%     \CVSubheading
+%       {High School Calculus (11 Weeks Teaching/Observing)}{Fall 2017}
+%       {Denison High School}{Denison, TX}
+%     \CVSubheading
+%       {High School Geometry (9 Weeks Teaching/Observing)}{Spring 2016}
+%       {Sherman High School}{Sherman, TX}
+%   \CVSubHeadingListEnd
+
+
+%-----Language Proficiency-------------------------------------------------------------------
+
+\section{Language Proficiency}
+  \CVSubHeadingListStart
+    \CVSubheading
+    {Bengali}{}{Native Speaker}{}
+
+    \CVSubheading
+    {English}{}{IELTS: Overall 7.5. Speaking: 7, Reading: 8.5, Listening: 8.0, Writing: 6.5}{August 2022}
+    \CVSubHeadingListEnd
+
+%-----COMMUNITY INVOLVEMENT----------------------------------------------------
+\section{Community Involvement}
+  \CVSubHeadingListStart
+%    \CVSubheading %Example
+%      {What you did}{When you worked there}
+%      {Who you worked for}{Where they are located}
+    \CVSubheading
+      {Bishwo Shahitto Kendro (World Literature Center)}{2009 -- 2013}
+      {Worked as Student Volunteer.}{}
+    \CVSubheading
+      {Open-source Contributor}{2018 -- Present}
+      {Most significant contribution was making Bangla language accessible to all by developing OpenBangla}{}
+  \CVSubHeadingListEnd
+
+
+
+\section{Reference}
+\CVSubHeadingListStart
+    \CVSubheading{01 - Md. Golam Rabiul Alam, PhD}{}{}{}
+    \\
+    Professor, Department of Computer Science \& Engineering,
+    \\
+    BRAC University,
+    \\
+    66 Mohakhali, Dhaka-1212, Bangladesh.\\
+    E-mail: rabiul.alam@bracu.ac.bd\\
+    Mobile number: +8801797347635
+    \linebreak
+
+
+    \CVSubheading{02 - Muhammad Iqbal Hossain, Ph.D.}{}{}{}
+    \\
+    Assistant Professor, Department of Computer Science \& Engineering,
+    \\
+    BRAC University,
+    \\
+    66 Mohakhali, Dhaka-1212, Bangladesh.\\
+    E-mail: iqbal.hossain@bracu.ac.bd\\
+    Mobile number: +8809617445122 Ext. 5122
+    \linebreak
+
+    \CVSubheading{03 - Sadia Hamid Kazi, Ph.D.}{}{}{}
+    \\
+    Chairperson and Associate Professor, Department of Computer Science \& Engineering,
+    \\
+    BRAC University,
+    \\
+    66 Mohakhali, Dhaka-1212, Bangladesh.\\
+    E-mail: skazi@bracu.ac.bd\\
+    Mobile number: +88009617445141, Ext 5141
+    
+\CVSubHeadingListEnd
+    
+%------------------------------------------------------------------------------
+\end{document}

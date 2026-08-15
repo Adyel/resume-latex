@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ATS-Optimized Tech Resume
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{helvet}
+\usepackage{enumitem}
+\usepackage[
+  left=0.75in,
+  right=0.75in,
+  top=0.5in,
+  bottom=0.5in
+]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+% --- CUSTOMIZATION ---
+\pagestyle{empty}
+\renewcommand{\familydefault}{\sfdefault}
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\titleformat{\section}{\vspace{6pt}\scshape\raggedright\large}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{*2}{*1}
+\setlist[itemize]{leftmargin=*, noitemsep, topsep=0pt}
+
+\begin{document}
+
+% --- HEADER ---
+\begin{center}
+    \textbf{\Huge Md Adyelullahil Mamun} \\
+    \vspace{2pt}
+    \small Dhaka, Bangladesh | +880 1534 953967 | \href{mailto:adyel@live.com}{adyel@live.com} \\
+    \href{https://linkedin.com/in/ady3l}{linkedin.com/in/ady3l} | \href{https://github.com/adyel}{github.com/adyel}
+\end{center}
+
+% --- PROFESSIONAL SUMMARY ---
+\section*{Professional Summary}
+Results-driven Backend Engineer with \textbf{5 years} of experience designing and scaling enterprise SaaS platforms. Specialized in \textbf{Java, Spring Boot, and relational databases}, with a proven record delivering high-volume reporting, billing, and data-processing systems in compliance-driven environments. Skilled in \textbf{RESTful API design, microservices, database optimization, and DevOps automation}, with achievements including reducing batch processing from hours to minutes, lowering infrastructure costs, and improving developer productivity. Passionate about building secure, scalable systems that solve complex challenges in distributed and data-intensive environments.
+
+% --- TECHNICAL SKILLS ---
+\section*{Technical Skills}
+\begin{tabularx}{\textwidth}{@{}lX}
+    \textbf{Programming} & Java, Kotlin, SQL/PLSQL, JavaScript, TypeScript, Bash, Rust (familiar) \\
+    \textbf{Frameworks \& Libraries} & Spring Boot, Spring MVC, Spring Data, Spring Security, Hibernate, MyBatis, JUnit, Mockito, Smooks \\
+    \textbf{Databases} & Oracle, PostgreSQL, MySQL; schema design, query optimization, indexing, partitioning \\
+    \textbf{Cloud \& DevOps} & AWS (EC2, S3), Docker, CI/CD pipelines, Linux \\
+    \textbf{APIs \& Architecture} & RESTful APIs, Microservices, Messaging Queues, OAuth2, JWT, Idempotency patterns \\
+    \textbf{Tools} & Git, Maven/Gradle, Jira, Confluence, IntelliJ IDEA, SonarQube \\
+    \textbf{Frontend (Working Knowledge)} & JSP, jQuery, React, Thymeleaf \\
+\end{tabularx}
+
+% --- PROFESSIONAL EXPERIENCE ---
+\section*{Professional Experience}
+
+\textbf{Therap (BD) Ltd.} \hfill Dhaka, Bangladesh \\
+\textit{Software Engineer II (Backend Focused)} \hfill Feb 2021 -- Present
+\begin{itemize}
+    \item \textbf{Architected} a reporting microservice using Spring Boot and Oracle, reducing report generation time from \textbf{24+ hours (overnight) to under 10-20 minutes} through SQL optimization, async processing, and message queues.
+    \item \textbf{Migrated} legacy monolith modules to Spring Boot microservices for reporting, billing, and external data feeds; improved scalability and cut deployment times by \textbf{20–50\%}.
+    \item \textbf{Developed} and maintained a suite of RESTful APIs for healthcare documentation, billing, and onboarding workflows; ensured scalability, security, and backward compatibility for partner integrations.
+    \item \textbf{Implemented} comprehensive unit and integration tests using JUnit and Mockito across APIs, services, and validators, improving overall test coverage by \textbf{15\%} and reducing production defects by around \textbf{1\%}.
+    \item \textbf{Engineered} HIPAA-compliant data pipelines (Medicaid billing, T-Logs, EVV, Attendance), reducing compliance errors by \textbf{99\%} and ensuring audit readiness.
+    \item \textbf{Optimized} backend workflows and SQL queries for high-volume reporting, cutting nightly batch jobs from \textbf{6+ hours to 30 minutes} and lowering infrastructure costs by \textbf{10–25\%}.
+    \item \textbf{Introduced} Docker-based CI/CD staging environments, improving release confidence and reducing feedback loops by \textbf{30–60\%}.
+    \item \textbf{Collaborated} with U.S. teams (product, QA, compliance) on state-specific requirements; contributed to adoption by 40+ partner organizations and 5 state contracts.
+    \item \textbf{Mentored} 3 junior engineers via code reviews, pair programming, and technical sessions, reducing onboarding time by \textbf{25\%}.
+\end{itemize}
+
+\vspace{6pt}
+\noindent
+\textbf{Metafour Ltd.} \hfill Dhaka, Bangladesh \\
+\textit{Software Engineer Intern} \hfill Jan 2021 -- Feb 2021
+\begin{itemize}
+    \item \textbf{Developed} frontend features in React and TypeScript for a supply chain management platform; integrated with backend REST APIs to deliver production-ready modules.
+    \item \textbf{Collaborated} in Agile sprints (stand-ups, planning, retrospectives), contributing to faster feature delivery and improved sprint velocity.
+\end{itemize}
+
+% --- PROJECTS ---
+\section*{Projects}
+\textbf{OpenBangla Keyboard (Open Source Maintainer)} \hfill C++, Qt, Rust, Bash \\
+\begin{itemize}
+    \item \textbf{Maintained} and scaled the leading open-source Bengali input software for Linux, with 450+ GitHub stars and thousands of users across the region.
+    \item \textbf{Refactored} core C++ components and redesigned UI, improving performance, maintainability, and user experience.
+    \item \textbf{Automated} build and release pipelines with CI/CD, reducing release cycles from days to minutes.
+\end{itemize}
+
+\vspace{8pt}
+\noindent
+\textbf{Resume \& Cover Letter Assistant} \hfill Java, Spring Boot, PostgreSQL, LLM \\
+\begin{itemize}
+    \item \textbf{Built} a full-stack application to help users track applications, update resumes, and auto-generate tailored cover letters using LLM-powered suggestions.
+    \item \textbf{Designed} backend services in Spring Boot with PostgreSQL for profiles, document storage, and tracking.
+    \item \textbf{Integrated} OpenAI API to analyze job descriptions and dynamically adapt resumes/cover letters, reducing manual editing time by \textbf{~70\%}.
+    \item \textbf{Deployed} containerized services with Docker for local and cloud environments; implemented authentication, role-based access, and secure file uploads.
+\end{itemize}
+
+\vspace{8pt}
+\noindent
+\textbf{JCommerce – E-commerce Platform (Academic)} \hfill Java, Spring Boot, PostgreSQL \\
+\begin{itemize}
+    \item \textbf{Built} a secure e-commerce application with Spring Boot and PostgreSQL; implemented Spring Security for authentication and authorization.
+    \item \textbf{Designed} REST APIs for catalog, cart, and order workflows; created modular services supporting future payment and fulfillment integrations.
+\end{itemize}
+
+% --- EDUCATION ---
+\section*{Education}
+\textbf{BRAC University} \hfill Dhaka, Bangladesh \\
+Bachelor of Science in Computer Science \hfill 2017 -- 2021 \\
+CGPA: 3.80 / 4.00 -- Awarded Highest Distinction
+
+% --- CERTIFICATIONS ---
+\section*{Certifications}
+\begin{itemize}
+    \item Building Scalable Java Microservices with Spring Boot and Spring Cloud -- \textit{Google Cloud (2020)}
+    \item Deep Learning Fundamentals with Keras -- \textit{IBM (2020)}
+\end{itemize}
+
+% --- LANGUAGES ---
+\section*{Languages}
+\begin{itemize}
+    \item Bengali: Native Proficiency
+    \item English: Professional Proficiency (IELTS 7.5)
+\end{itemize}
+
+\end{document}

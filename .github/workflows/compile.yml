@@ -1,0 +1,56 @@
+name: Compile & Release Resumes
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile Professional Resume
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: adyel-professional-resume.tex
+
+      - name: Compile Academic Resume
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: adyel-academic-resume.tex
+
+      - name: Upload PDF Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: compiled-resumes
+          path: |
+            adyel-professional-resume.pdf
+            adyel-academic-resume.pdf
+
+      - name: Create or Update "latest" Release
+        uses: softprops/action-gh-release@v2
+        if: github.ref == 'refs/heads/main'
+        with:
+          tag_name: latest
+          name: Latest Compiled Resumes
+          body: |
+            Automated build of Adyel's Professional Resume and Academic CV.
+            
+            - [Download Professional Resume](https://github.com/${{ github.repository }}/releases/latest/download/adyel-professional-resume.pdf)
+            - [Download Academic CV](https://github.com/${{ github.repository }}/releases/latest/download/adyel-academic-resume.pdf)
+          draft: false
+          prerelease: false
+          files: |
+            adyel-professional-resume.pdf
+            adyel-academic-resume.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
