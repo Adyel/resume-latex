@@ -1,4 +1,5 @@
 # LaTeX compilation artifacts
+*.pdf
 *.aux
 *.bbl
 *.bcf

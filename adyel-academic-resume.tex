@@ -18,8 +18,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{tikz}
-\input{glyphtounicode}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
 
 \begin{comment}
 I am by no means a professional when it comes to the CV's/resumes, I have
@@ -78,8 +81,6 @@ strokes, sans-serif fonts are sans (without) these strokes.
   \vspace{-4pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
-% Ensure that .pdf is machine readable/ATS parsable
-\pdfgentounicode=1
 
 %-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
 \newcommand{\CVItem}[1]{

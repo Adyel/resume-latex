@@ -18,15 +18,26 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile Professional Resume
-        uses: xu-cheng/latex-action@v3
-        with:
-          root_file: adyel-professional-resume.tex
+      - name: Install Tectonic
+        run: |
+          gh release download --repo tectonic-typesetting/tectonic --pattern "*x86_64-unknown-linux-musl.tar.gz" --output tectonic.tar.gz
+          tar -xzf tectonic.tar.gz
+          sudo mv tectonic /usr/local/bin/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Compile Academic Resume
-        uses: xu-cheng/latex-action@v3
+      - name: Cache Tectonic Packages & Fonts
+        uses: actions/cache@v4
         with:
-          root_file: adyel-academic-resume.tex
+          path: ~/.cache/Tectonic
+          key: ${{ runner.os }}-tectonic-${{ hashFiles('**/*.tex') }}
+          restore-keys: |
+            ${{ runner.os }}-tectonic-
+
+      - name: Compile Resumes
+        run: |
+          tectonic adyel-professional-resume.tex
+          tectonic adyel-academic-resume.tex
 
       - name: Upload PDF Artifacts
         uses: actions/upload-artifact@v4
